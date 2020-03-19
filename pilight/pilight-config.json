@@ -11,7 +11,7 @@
             "webserver-http-port": 5001,
             "webserver-cache": 1,
             "port": 5000,
-            "gpio-platform": "raspberrypi3"
+            "gpio-platform": "raspberrypi4"
     },
     "hardware": {
             "433gpio": {
