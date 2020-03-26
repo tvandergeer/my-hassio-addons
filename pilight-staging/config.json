@@ -1,8 +1,8 @@
 {
     "arch": ["armv7", "armhf"],
     "name": "pilight staging",
-    "version": "0.2.6 staging", 
-    "slug": "pilight staging",
+    "version": "0.2.6-staging", 
+    "slug": "piligh-staging",
     "description": "Pilight server (staging)",
     "startup": "services",
     "boot": "auto",
