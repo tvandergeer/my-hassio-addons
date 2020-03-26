@@ -14,7 +14,7 @@
       "receiver": -1
     },
     "schema": {
-      "gpioplatform": "string",
+      "gpioplatform": "str",
       "sender": "int",
       "receiver": "int"
     },
