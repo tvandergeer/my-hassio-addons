@@ -3,13 +3,13 @@
 # Extract config data
 CONFIG_PATH=/data/options.json
 SENDER=$(jq -r '.sender // empty' "$CONFIG_PATH")
-SENDER=${SENDER:-0} # default to none
+SENDER=${SENDER:-0} # default to 0
 
 GPIO_PLATFORM=$(jq -r '.gpioplatform // empty' "$CONFIG_PATH")
-GPIO_PLATFORM=${GPIO_PLATFORM:-none} # default to none
+GPIO_PLATFORM=${GPIO_PLATFORM:-\"raspberrypi4\"} # default to "raspberrypi4"
 
 RECEIVER=$(jq -r '.receiver // empty' "$CONFIG_PATH")
-RECEIVER=${RECEIVER:--1} # default to none
+RECEIVER=${RECEIVER:-1} # default to 1
 
 echo $RECEIVER
 
