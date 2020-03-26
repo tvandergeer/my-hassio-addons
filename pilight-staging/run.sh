@@ -6,7 +6,7 @@ SENDER=$(jq -r '.sender // empty' "$CONFIG_PATH")
 SENDER=${SENDER:-0} # default to 0
 
 GPIO_PLATFORM=$(jq -r '.gpioplatform // empty' "$CONFIG_PATH")
-GPIO_PLATFORM=${GPIO_PLATFORM:-\"raspberrypi4\"} # default to "raspberrypi4"
+GPIO_PLATFORM=${GPIO_PLATFORM:-raspberrypi4} # default to raspberrypi4
 
 RECEIVER=$(jq -r '.receiver // empty' "$CONFIG_PATH")
 RECEIVER=${RECEIVER:-1} # default to 1
@@ -14,7 +14,7 @@ RECEIVER=${RECEIVER:-1} # default to 1
 echo $RECEIVER
 
 # # Update pilight config
-sed -i 's/\("gpio-platform"\): \?.*\(.*\)/\1: '$GPIO_PLATFORM'\2/' /etc/pilight/config.json
+sed -i 's/\("gpio-platform"\): \?.*\(.*\)/\1: '\"$GPIO_PLATFORM\"'\2/' /etc/pilight/config.json
 sed -i 's/\("receiver"\): \?.*\(.*\)/\1: '$RECEIVER'\2/' /etc/pilight/config.json
 sed -i 's/\("sender"\): \?.*\(.*\)/\1: '$SENDER,'\2/' /etc/pilight/config.json
 
