@@ -1,0 +1,5 @@
+{
+    "gpioplatform": "raspberrypi4",
+    "sender": 0,
+    "receiver": 1
+}
