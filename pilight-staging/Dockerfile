@@ -28,11 +28,12 @@ RUN git clone --depth 5 -b staging https://www.github.com/pilight/pilight.git
 RUN cd pilight \
 	&& mkdir -p build \
 	&& cd build \
-	&& cmake .. \
+	&& cmake -DWEBSERVER_HTTPS=OFF -DMQTT=OFF .. \
 	&& make install
 
-RUN pwd
+#RUN echo
 RUN ldconfig
+RUN cp pilight/res/pilight.pem /etc/pilight/.
 
 EXPOSE 5000/tcp 5001/tcp
 
