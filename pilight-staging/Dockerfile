@@ -28,7 +28,7 @@ RUN git clone --depth 5 -b staging https://www.github.com/pilight/pilight.git
 RUN cd pilight \
 	&& mkdir -p build \
 	&& cd build \
-	&& cmake -DWEBSERVER_HTTPS=OFF -DMQTT=OFF .. \
+	&& cmake -DWEBSERVER_HTTPS=OFF .. \
 	&& make install
 
 #RUN echo
